@@ -1,5 +1,5 @@
 use clap::Parser;
-use forge::TestFilter;
+use zkforge::TestFilter;
 use foundry_compilers::{FileFilter, ProjectPathsConfig};
 use foundry_config::{filter::GlobMatcher, Config};
 use std::{fmt, path::Path};

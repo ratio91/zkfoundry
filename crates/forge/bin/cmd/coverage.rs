@@ -2,7 +2,7 @@ use super::{install, test::TestArgs};
 use alloy_primitives::{Address, Bytes, U256};
 use clap::{Parser, ValueEnum, ValueHint};
 use eyre::{Context, Result};
-use forge::{
+use zkforge::{
     coverage::{
         analysis::{SourceAnalysis, SourceAnalyzer, SourceFile, SourceFiles},
         anchors::find_anchors,

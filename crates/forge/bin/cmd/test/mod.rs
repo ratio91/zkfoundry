@@ -2,7 +2,7 @@ use super::{install, test::filter::ProjectPathsAwareFilter, watch::WatchArgs};
 use alloy_primitives::U256;
 use clap::Parser;
 use eyre::Result;
-use forge::{
+use zkforge::{
     decode::decode_console_logs,
     gas_report::GasReport,
     multi_runner::matches_contract,
@@ -50,7 +50,7 @@ mod summary;
 use summary::TestSummaryReporter;
 
 pub use filter::FilterArgs;
-use forge::traces::render_trace_arena;
+use zkforge::traces::render_trace_arena;
 
 // Loads project's figment and merges the build cli arguments into it
 foundry_config::merge_impl_figment_convert!(TestArgs, opts, evm_opts);
@@ -149,7 +149,7 @@ impl TestArgs {
     }
 
     pub async fn run(self) -> Result<TestOutcome> {
-        trace!(target: "forge::test", "executing test command");
+        trace!(target: "zkforge::test", "executing test command");
         shell::set_shell(shell::Shell::from_args(self.opts.silent, self.json))?;
         self.execute_tests().await
     }

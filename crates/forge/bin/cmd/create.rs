@@ -570,7 +570,7 @@ impl CreateArgs {
             Some(constructor) => constructor.abi_encode_input(&args).unwrap_or_default(),
         };
         let data = foundry_zksync_core::encode_create_params(
-            &forge::revm::primitives::CreateScheme::Create,
+            &zkforge::revm::primitives::CreateScheme::Create,
             zk_data.bytecode_hash,
             zk_constructor_args,
         );
@@ -946,7 +946,7 @@ where
             Some(constructor) => constructor.abi_encode_input(&params).unwrap_or_default(),
         };
         let data: Bytes = foundry_zksync_core::encode_create_params(
-            &forge::revm::primitives::CreateScheme::Create,
+            &zkforge::revm::primitives::CreateScheme::Create,
             zk_data.bytecode_hash,
             constructor_args,
         )
